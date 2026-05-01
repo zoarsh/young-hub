@@ -1031,3 +1031,24 @@ https://github.com/zoarsh/young-hub.git
 ### משמעות לפריסה עתידית ב-Streamlit
 
 לאחר שהקוד יעלה ל-GitHub, ניתן יהיה לחבר את ה-repository ל-Streamlit Community Cloud. את מפתח ה-OpenAI לא מגדירים דרך GitHub אלא דרך מנגנון Secrets של Streamlit.
+
+## עדכון יומן מחקר: תיקון סביבת הפריסה ב-Streamlit Cloud
+
+### הבעיה
+
+בפריסה הראשונה ב-Streamlit Cloud הופיעה שגיאת טעינה בזמן ייבוא Chroma. לפי ה-Traceback, Streamlit הריץ את האפליקציה על Python 3.14, ונוצרה שגיאת תאימות בין `chromadb`, `opentelemetry` ו-`protobuf`.
+
+### הפעולה שבוצעה
+
+נוספו הגדרות סביבת הרצה יציבות יותר:
+
+- נוסף קובץ `runtime.txt` עם Python 3.11.
+- עודכן `requirements.txt` עם `protobuf==3.20.3`.
+
+### הסיבה
+
+Python 3.11 היא סביבת הרצה יציבה יותר עבור Chroma, LangChain ו-Sentence Transformers. קיבוע `protobuf` לגרסה 3.20.3 מונע שגיאת descriptor ידועה שמופיעה בחלק משילובי הספריות.
+
+### בדיקה נדרשת
+
+לאחר העלאת השינוי ל-GitHub, יש לבצע Reboot או Redeploy ב-Streamlit Cloud ולבדוק שהייבוא של Chroma עובר בהצלחה.
