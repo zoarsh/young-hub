@@ -1,0 +1,19 @@
+{
+  "collection_id": "reports_d035e9af6fe6",
+  "reports": [
+    "arab_young.pdf",
+    "corona_slide.pdf",
+    "hasut_interview.pdf",
+    "omna_review.pdf",
+    "war impact_1.pdf",
+    "war_impact_review.pdf",
+    "young_lebanon.pdf",
+    "Young_Statistical_2025.pdf"
+  ],
+  "created_at": "2026-05-01T14:14:56",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "chunk_size": 900,
+  "chunk_overlap": 160,
+  "pages_count": 945,
+  "chunks_count": 1808
+}

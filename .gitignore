@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.venv/
+venv/
+data/__pycache__/
+data/chroma_db/
+data/chroma_db_clean/
+data/streamlit_chroma/
+streamlit.*.log
